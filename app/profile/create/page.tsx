@@ -1,12 +1,12 @@
 import React from 'react'
 
 import FormInput from '@/components/form/FormInput';
-import SubmitButton from '@/components/form/Button';
 import FormContainer from '@/components/form/FormContainer';
 import { createProfileAction } from '@/utils/actions';
 import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import PriceInput from '@/components/form/PriceInput';
+import { SubmitButton } from '@/components/form/Button';
 
 const CreateProfilePage = async () => {
   const user =  await currentUser();

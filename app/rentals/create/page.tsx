@@ -8,7 +8,8 @@ import CountriesInput from '@/components/form/CountriesInput';
 import ImageInput from '@/components/form/ImageInput';
 import CounterInput from '@/components/form/CounterInput';
 import AmenitiesInput from '@/components/form/AmenitiesInput';
-import SubmitButton from '@/components/form/Button';
+import { SubmitButton } from '@/components/form/Button';
+
 function CreatePropertyPage() {
   return (
     <section>
