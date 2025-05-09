@@ -7,6 +7,7 @@ import { actionFunction } from '@/utils/types';
 
 const initialState = {
   message: '',
+  success:false
 };
 
 
@@ -23,6 +24,12 @@ const FormContainer = ({
     useEffect(() => {
         if(state.message){
             toast({description: state.message})
+        }
+
+        if (state.success) {
+          const formElement = document.querySelector('form');
+          console.log(formElement)
+          if (formElement) formElement.reset();
         }
     }, [state])
 
