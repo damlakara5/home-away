@@ -10,6 +10,7 @@ type TextAreaInputProps = {
 };
 
 const TextAreaInput = ({ name, labelText, defaultValue, value, onChange }: TextAreaInputProps) => {
+  console.log("AAAAAAAAAAAAA",value)
   return (
     <div className='mb-2'>
       <Label className='capitalize' htmlFor={name}>{labelText || name}</Label>

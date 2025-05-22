@@ -28,7 +28,6 @@ const FormContainer = ({
 
         if (state.success) {
           const formElement = document.querySelector('form');
-          console.log(formElement)
           if (formElement) formElement.reset();
         }
     }, [state])

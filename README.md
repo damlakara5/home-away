@@ -5987,7 +5987,6 @@ export const createBookingAction = async (prevState: {
 }) => {
   // create variable
   let bookingId: null | string = null;
-
   try {
     const booking = await db.booking.create(....);
     // change value
