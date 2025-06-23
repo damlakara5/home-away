@@ -16,5 +16,5 @@ async function AdminPage() {
       </Suspense>
     </>
   );
-}
+} 
 export default AdminPage;
