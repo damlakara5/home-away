@@ -54,9 +54,12 @@ Whether you're a traveler looking for your next stay or a host managing multiple
 - Clerk handles user registration, login, and secure session management.
 - Admin routes are protected via middleware and environment-based user IDs.
 
-### 💳 Stripe Integration
-- Embedded Stripe Checkout for smooth payment flow.
-- Each booking creates a new checkout session and updates payment status on confirmation.
+### 💳 Stripe Embedded Checkout
+- Users are redirected to a dedicated `/checkout` route that leverages Stripe's **Embedded Checkout** for a smooth booking experience.
+- A unique booking is created first and any unpaid bookings are cleaned up.
+- Stripe session metadata is used to associate payment confirmations with bookings.
+- Booking status is marked as paid (`paymentStatus = true`) upon successful Stripe confirmation.
+- Failed or unpaid bookings are filtered from all listings, stats, and reservation tables.
 
 ### 📊 Analytics & Admin
 - Admin dashboard shows monthly booking trends and system-wide metrics (users, listings, bookings).
@@ -65,6 +68,7 @@ Whether you're a traveler looking for your next stay or a host managing multiple
 ### 🗓️ Reservations & Bookings
 - Bookings respect availability (disabled dates), and only successful Stripe payments are stored.
 - Hosts can view bookings and reservations in clean data tables with export-friendly structure.
+- Reservation stats show total income, nights booked, and number of listings using real-time queries.
 
 ---
 
@@ -77,6 +81,12 @@ Whether you're a traveler looking for your next stay or a host managing multiple
 - All actions (e.g., delete, update, submit forms) use **progress-aware buttons** and **form containers** for reusability and user feedback.
 - Performance and loading states are covered with graceful **skeleton loaders**.
 - All dates and currencies are properly formatted using built-in internationalization utilities.
+- **Stripe Payment Flow Summary**:
+  - Users initiate bookings via `createBookingAction`.
+  - Unpaid bookings are purged before creating a new one.
+  - A new Stripe Embedded Checkout session is created via `/api/payment`.
+  - Booking is confirmed and marked `paid` through `/api/confirm` using session metadata.
+  - Frontend renders `EmbeddedCheckout` using Stripe SDK and fetched `clientSecret`.
 
 ---
 
@@ -93,6 +103,8 @@ Whether you're a traveler looking for your next stay or a host managing multiple
 ## 📦 Deployment
 
 This app is production-ready and deployable on **Vercel** with environment variable support.
+
+---
 
 ## Author
 
