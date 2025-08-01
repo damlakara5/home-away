@@ -1,6 +1,6 @@
-# 🏡 Property Booking Platform
+# 🏡 Property Booking Platform - GlobeStay
 
-Welcome to the Property Booking Platform — a modern, feature-rich full-stack web app where users can list, book, and manage properties for short-term stays.
+Welcome to the GlobeStay — a modern, feature-rich full-stack web app where users can list, book, and manage properties for short-term stays.
 
 Whether you're a traveler looking for your next stay or a host managing multiple listings, this platform is designed to offer a seamless experience for both.
 

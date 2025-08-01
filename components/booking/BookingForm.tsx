@@ -15,15 +15,15 @@ const BookingForm = () => {
 
   return (
     <Card className='p-8 mb-4'>
-    <CardTitle className='mb-8'>Summary </CardTitle>
-    <BookingFormRow label={`$${price} x ${totalNights} nights`} amount={subTotal} />
-    <BookingFormRow label='Cleaning Fee' amount={cleaning} />
-    <BookingFormRow label='Service Fee' amount={service} />
-    <BookingFormRow label='Tax' amount={tax} />
-    <Separator className='mt-4' />
-    <CardTitle className='mt-8'>
-      <BookingFormRow label='Booking Total' amount={orderTotal} />
-    </CardTitle>
+      <CardTitle className='mb-8'>Summary </CardTitle>
+      <BookingFormRow label={`$${price} x ${totalNights} nights`} amount={subTotal} />
+      <BookingFormRow label='Cleaning Fee' amount={cleaning} />
+      <BookingFormRow label='Service Fee' amount={service} />
+      <BookingFormRow label='Tax' amount={tax} />
+      <Separator className='mt-4' />
+      <CardTitle className='mt-8'>
+        <BookingFormRow label='Booking Total' amount={orderTotal} />
+      </CardTitle>
   </Card>
   )
 }
