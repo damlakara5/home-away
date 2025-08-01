@@ -103,6 +103,7 @@ Whether you're a traveler looking for your next stay or a host managing multiple
 ## 📦 Deployment
 
 This app is production-ready and deployable on **Vercel** with environment variable support.
+Link for the app: https://globe-stay.vercel.app
 
 ---
 
